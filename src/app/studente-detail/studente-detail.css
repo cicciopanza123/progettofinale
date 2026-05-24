@@ -1,0 +1,278 @@
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 18px 36px;
+}
+
+
+.btn-indietro {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+
+.btn-indietro:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+
+.profilo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #eef2ff 0%, #ffffff 100%);
+  padding: 28px 26px;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgb(99 102 241 / 8%);
+  margin-bottom: 30px;
+}
+
+
+.header-left h1 {
+  margin: 0 0 10px 0;
+  color: #111827;
+  font-size: 2rem;
+}
+
+
+.header-left .eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+
+.info-line {
+  margin: 0;
+  color: #475569;
+  line-height: 1.6;
+}
+
+
+.profilo-header code {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 2px 6px;
+}
+
+
+.media-badge {
+  min-width: 160px;
+  text-align: center;
+  background: #dcfce7;
+  color: #15803d;
+  padding: 18px 22px;
+  border-radius: 18px;
+  box-shadow: 0 10px 20px rgb(15 23 42 / 8%);
+}
+
+
+.media-badge.insufficiente {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+.media-badge small {
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  letter-spacing: 0.08em;
+  opacity: 0.9;
+}
+
+
+.media-badge strong {
+  font-size: 2.5rem;
+  display: block;
+  margin-top: 4px;
+}
+
+
+.registro-griglia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+
+@media (max-width: 900px) {
+  .registro-griglia {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.box-registro {
+  background: white;
+  padding: 26px;
+  border-radius: 22px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 14px 32px rgb(15 23 42 / 6%);
+}
+
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+
+.section-title h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #111827;
+}
+
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+
+.voto-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.voto-row:last-child {
+  border-bottom: none;
+}
+
+
+.voto-cerchio {
+  width: 48px;
+  height: 48px;
+  background: #dcfce7;
+  color: #15803d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+
+
+.voto-cerchio.rosso {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+
+.voto-dettagli strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #111827;
+}
+
+
+.data-sub {
+  display: block;
+  font-size: 0.92rem;
+  color: #6b7280;
+}
+
+
+.nota-docente {
+  margin: 10px 0 0 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+
+.assenza-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+
+.assenza-item:last-child {
+  border-bottom: none;
+}
+
+
+.assenza-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+
+.data-assenza {
+  font-weight: 700;
+  color: #111827;
+}
+
+
+.tipo-badge {
+  font-size: 0.82rem;
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #475569;
+  letter-spacing: 0.01em;
+}
+
+
+.giustificata-stato {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #ef4444;
+}
+
+
+.giustificata-stato.giustificato {
+  color: #16a34a;
+}
+
+
+.nota-assenza {
+  margin: 10px 0 0 0;
+  color: #64748b;
+  font-size: 0.94rem;
+}
+
+
+.vuoto-avviso {
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.95rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+.vuoto-avviso.ok {
+  color: #2563eb;
+}
