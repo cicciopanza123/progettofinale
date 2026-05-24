@@ -1,12 +1,8 @@
 import { Routes } from '@angular/router';
 import { ClassiList } from './classi-list/classi-list';
 import { ClasseDashboard } from './classe-dashboard/classe-dashboard';
-import { StudenteDetail } from './studente-detail/studente-detail';
-import { DocenteDetail } from './docente-detail/docente-detail';
 export const routes: Routes = [
   { path: '', redirectTo: 'classi', pathMatch: 'full' },
   { path: 'classi', component: ClassiList },
-  { path: 'classi/:id_classe', component: ClasseDashboard },
-  { path: 'studenti/:id_studente', component: StudenteDetail },
-  { path: 'docenti/:id_docente', component: DocenteDetail }
+  { path: 'classi/:id_classe', component: ClasseDashboard }
 ];

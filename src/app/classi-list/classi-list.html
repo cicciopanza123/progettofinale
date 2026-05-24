@@ -1,1 +1,29 @@
-<p>classi-list works!</p>
+<div class="container">
+  <div class="header-scuola">
+    <div class="header-top">
+      <div>
+        <span class="eyebrow">Registro Elettronico</span>
+        <h1>🏫 Istituti Scolastici</h1>
+        <p>Seleziona una classe per accedere al registro dei voti, all'orario delle lezioni e all'elenco alunni.</p>
+      </div>
+      <div class="stats-card">
+        <span>Classi disponibili</span>
+        <strong>{{ classi.length }}</strong>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="griglia-classi">
+    @for (c of classi; track c.id_classe) {
+      <div class="classe-card" (click)="apriClasse(c.id_classe)">
+        <div class="card-badge">Aula Digitale</div>
+        <h2>{{ c.nome }} {{ c.sezione }}</h2>
+        <p class="indirizzo-testo">{{ c.indirizzo }}</p>
+        <div class="card-footer-info">
+          <span>Anno Scolastico</span>
+          <strong>ID {{ c.id_anno }}</strong>
+        </div>
+      </div>
+    }
+  </div>
+</div>
