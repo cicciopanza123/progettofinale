@@ -1,0 +1,47 @@
+<div *ngIf="classe">
+  <button class="btn-indietro" (click)="tornaIndietro()">⬅ Torna alle Classi</button>
+  <h2>Dashboard Classe: {{ classe.nome }} {{ classe.sezione }}</h2>
+
+
+  <div class="dashboard-grid">
+   
+    <div class="colonna">
+      <h3>Studenti Iscritti</h3>
+      <table class="tabella-scuola">
+        <thead>
+          <tr>
+            <th>Cognome e Nome</th>
+            <th>Azione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let s of studenti">
+            <td>{{ s.cognome }} {{ s.nome }}</td>
+            <td><button class="btn-azione" (click)="apriStudente(s.id_studente)">Profilo</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="colonna">
+      <h3>Corpo Docenti della Classe</h3>
+      <table class="tabella-scuola">
+        <thead>
+          <tr>
+            <th>Cognome e Nome</th>
+            <th>Azione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of docenti">
+            <td>{{ d.cognome }} {{ d.nome }}</td>
+            <td><button class="btn-azione" (click)="apriDocente(d.id_docente)">Vedi Sezioni</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+</div>
