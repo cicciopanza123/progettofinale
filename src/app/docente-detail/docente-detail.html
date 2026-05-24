@@ -1,0 +1,29 @@
+<div *ngIf="docente">
+  <button class="btn-indietro" (click)="tornaIndietro()">⬅ Indietro alla Dashboard</button>
+ 
+  <div class="profilo-box">
+    <h2>Prof. {{ docente.cognome }} {{ docente.nome }}</h2>
+    <p><strong>Email istituzionale:</strong> {{ docente.email }}</p>
+  </div>
+
+
+  <h3>Classi e Sezioni in cui insegna</h3>
+  <table class="tabella-scuola">
+    <thead>
+      <tr>
+        <th>Classe</th>
+        <th>Sezione</th>
+        <th>Indirizzo di Studio</th>
+        <th>Giorno della Settimana</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of sezioni">
+        <td>{{ s.nome_classe }}</td>
+        <td>{{ s.sezione }}</td>
+        <td>{{ s.indirizzo }}</td>
+        <td>{{ s.giorno }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

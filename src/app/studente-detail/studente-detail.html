@@ -1,0 +1,53 @@
+<div class="container" *ngIf="studente">
+  <button class="btn-indietro" (click)="tornaAllaClasse()">← Registro di Classe</button>
+ 
+  <div class="profilo-header">
+    <div class="header-left">
+      <span class="eyebrow">Scheda Studente</span>
+      <h1>{{ studente.cognome }} {{ studente.nome }}</h1>
+      <p class="info-line">Data di nascita: {{ studente.data_nascita | date:'dd/MM/yyyy' }} • CF: <code>{{ studente.codice_fiscale }}</code></p>
+    </div>
+    <div class="media-badge" [class.insufficiente]="mediaVoti < 6">
+      <small>MEDIA REGISTRO</small>
+      <strong>{{ mediaVoti | number:'1.1-2' }}</strong>
+    </div>
+  </div>
+
+
+  <div class="registro-griglia">
+    <div class="box-registro">
+      <div class="section-title">
+        <h3>📈 Valutazioni e Prove</h3>
+        <span class="badge">{{ voti.length }} elementi</span>
+      </div>
+      <div class="voto-row" *ngFor="let v of voti">
+        <div class="voto-cerchio" [class.rosso]="v.valore < 6">{{ v.valore }}</div>
+        <div class="voto-dettagli">
+          <strong>Insegnamento ID: #{{ v.id_insegnamento }}</strong>
+          <span class="data-sub">{{ v.data | date:'dd MMMM yyyy' }} • {{ v.tipo_verifica }}</span>
+          <p class="nota-docente" *ngIf="v.nota">📝 <em>Nota: {{ v.nota }}</em></p>
+        </div>
+      </div>
+      <p *ngIf="voti.length === 0" class="vuoto-avviso">Nessun voto inserito a registro.</p>
+    </div>
+
+
+    <div class="box-registro">
+      <div class="section-title">
+        <h3>❌ Assenze e Giustificazioni</h3>
+        <span class="badge">{{ assenze.length }} elementi</span>
+      </div>
+      <div class="assenza-item" *ngFor="let a of assenze">
+        <div class="assenza-main">
+          <span class="data-assenza">{{ a.data | date:'dd/MM/yyyy' }}</span>
+          <span class="tipo-badge">{{ a.tipo }}</span>
+        </div>
+        <span class="giustificata-stato" [class.giustificato]="a.giustificata === 1">
+          {{ a.giustificata === 1 ? '✅ Giustificata' : '⚠️ Da Giustificare' }}
+        </span>
+        <p class="nota-assenza" *ngIf="a.nota"><small>Motivazione: {{ a.nota }}</small></p>
+      </div>
+      <p *ngIf="assenze.length === 0" class="vuoto-avviso ok">Frequenza perfetta! 0 assenze rilevate.</p>
+    </div>
+  </div>
+</div>
